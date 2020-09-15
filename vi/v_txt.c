@@ -1922,7 +1922,7 @@ txt_dent(SCR *sp, TEXT *tp, int isindent)
 	if (isindent)
 		target += COL_OFF(target, sw);
 	else
-		target -= --target % sw;
+		--target, target -= target % sw;
 
 	/*
 	 * The AI characters will be turned into overwrite characters if the
