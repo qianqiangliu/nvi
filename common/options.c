@@ -357,6 +357,7 @@ opts_init(SCR *sp, int *oargs)
 	    L("directory=%s"), (s = getenv("TMPDIR")) == NULL ? _PATH_TMP : s);
 	OI(O_TMP_DIRECTORY, b2);
 	OI(O_ESCAPETIME, L("escapetime=1"));
+	OI(O_FILEC, L("filec=\t"));
 	OI(O_KEYTIME, L("keytime=6"));
 	OI(O_MATCHTIME, L("matchtime=7"));
 	(void)SPRINTF(b2, SIZE(b2), L("msgcat=%s"), _PATH_MSGCAT);
