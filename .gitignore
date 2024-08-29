@@ -28,3 +28,4 @@ tcl_api/extern.h
 vi/extern.h
 build.unix/*.o
 build.unix/*.lo
+docs/vi.man/vi.0
