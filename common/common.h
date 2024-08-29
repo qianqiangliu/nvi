@@ -54,6 +54,7 @@ typedef struct _tag		TAG;
 typedef struct _tagf		TAGF;
 typedef struct _tagq		TAGQ;
 typedef struct _text		TEXT;
+typedef struct _vinfo		VINFO;
 typedef struct _win		WIN;
 
 /* Autoindent state. */
@@ -97,6 +98,7 @@ typedef enum { SEQ_ABBREV, SEQ_COMMAND, SEQ_INPUT } seq_t;
 #include "mark.h"		/* Required by gs.h. */
 #include "conv.h"		/* Required by ex.h and screen.h */
 #include "../ex/ex.h"		/* Required by gs.h. */
+#include "vinfo.h"		/* Required by gs.h. */
 #include "gs.h"			/* Required by screen.h. */
 #include "log.h"		/* Required by screen.h */
 #include "screen.h"		/* Required by exf.h. */

@@ -528,6 +528,7 @@ file_cinit(SCR *sp)
 	int nb;
 	CHAR_T *wp;
 	size_t wlen;
+	char *path;
 
 	/* Set some basic defaults. */
 	sp->lno = 1;
@@ -622,6 +623,12 @@ file_cinit(SCR *sp)
 	m.lno = sp->lno;
 	m.cno = sp->cno;
 	(void)mark_set(sp, ABSMARK1, &m, 0);
+
+	path = realpath(sp->frp->name, NULL);
+	if (path) {
+		vinfo_get(gp, path, &sp->lno, &sp->cno);
+		free(path);
+	}
 }
 
 /*
@@ -708,6 +715,14 @@ file_end(SCR *sp, EXF *ep, int force)
 
 	/* Free up any marks. */
 	(void)mark_end(sp, ep);
+
+	if (!F_ISSET(frp, FR_TMPFILE)) {
+		char *path = realpath(frp->name, NULL);
+		if (path) {
+			vinfo_update(sp->gp, path, sp->lno, sp->cno);
+			free(path);
+		}
+	}
 
 	if (ep->env) {
 		DB_ENV *env;

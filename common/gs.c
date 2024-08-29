@@ -57,6 +57,8 @@ gs_init(char *name)
 	CIRCLEQ_INIT(&gp->exfq);
 	LIST_INIT(&gp->seqq);
 
+	vinfo_init(gp);
+
 	thread_init(gp);
 
 	return (gp);
@@ -173,6 +175,7 @@ gs_end(GS *gp)
 	/* Close message catalogs. */
 	msg_close(gp);
 #endif
+	vinfo_save(gp);
 
 	/* Ring the bell if scheduled. */
 	if (F_ISSET(gp, G_BELLSCHED))

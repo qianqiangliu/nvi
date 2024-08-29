@@ -64,6 +64,7 @@ libvi_la_SOURCES = \
 	$(visrcdir)/common/screen.h \
 	$(visrcdir)/common/seq.h \
 	$(visrcdir)/common/util.h \
+	$(visrcdir)/common/vinfo.h \
 	$(visrcdir)/ex/ex.c \
 	$(visrcdir)/ex/ex_abbrev.c \
 	$(visrcdir)/ex/ex_append.c \
@@ -137,6 +138,7 @@ libvi_la_SOURCES = \
 	$(visrcdir)/common/trace.c \
 	$(visrcdir)/common/util.c \
 	$(visrcdir)/common/util2.c \
+	$(visrcdir)/common/vinfo.c \
 	$(visrcdir)/vi/v_at.c \
 	$(visrcdir)/vi/v_ch.c \
 	$(visrcdir)/vi/v_cmd.c \

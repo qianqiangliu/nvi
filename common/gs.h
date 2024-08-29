@@ -86,6 +86,7 @@ struct _gs {
 #ifdef DEBUG
 	FILE	*tracefp;		/* Trace file pointer. */
 #endif
+	VINFOH	 vinfoq;		/* Vi info list. */
 
 #define	MAX_BIT_SEQ	128		/* Max + 1 fast check character. */
 	LIST_HEAD(_seqh, _seq) seqq;	/* Linked list of maps, abbrevs. */
